@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price</title>    
+    <link rel="stylesheet" href="static\style.css">
+</head>
+
+<body class="cont">
+<div class="form-box">
+    <p align="center" class="heading"><b>CAR PRICE PREDICTION</b></p>
+    <form action="{{ url_for('predict')}}" method="POST" align="center">
+        <div class="b"><b>Year(1996-2020)</b><br>
+            <input class="a" type="Number" name ="Year" required="required"></div>
+
+        <div class="b"><b>Mileage(1-40000)</b><br>
+            <input type="Number" name="mileage" required="required" class="a"></div>
+
+        <div class="b"><b>Tax(0-170)</b><br>
+            <input type="Number" name="Tax" required="required" class="a"></div>
+			 <div class="b"><b>Mpg(0-100)</b><br>
+            <input type="Number" name="mpg" required="required" class="a"></div>
+			 <div class="b"><b>EngineSize(0-4)</b><br>
+            <input type="Number" step="0.5" name="EngineSize" required="required" class="a"></div>
+
+        <div class="b"><b>Transmission</b><br>
+            <select name="Transmission" class="a">
+            <option value="Automatic">Automatic</option>
+            <option value="Manual">Manual</option>
+            <option value="Other">Other</option>
+            <option value="SemiAuto">Semi-Auto</option></select></div>
+
+        <div class="b"><b>FuelType</b><br>
+            <select name="FuelType" class="a">
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+			 <option value="Hybrid">Hybrid</option>
+			  <option value="Other">Other</option>
+            <option value="Petrol">Petrol</option></select></div>
+
+        <div class="b"><b>Make</b><br>
+            <select name="Make" class="a">
+            <option value="BMW">BMW</option>
+			<option value="Ford">Ford</option>
+			<option value="Hyundai">Hyundai</option>
+			 <option value="Audi">Audi</option>
+			  <option value="Skoda">Skoda</option>
+			   <option value="Toyota">Toyota</option>
+			    <option value="vw">Volkswagen</option></select></div>
+
+        
+
+        <div class="c" align="center"><button type="submit" class="d">SUBMIT</button></div>
+    </form>
+	<p align="center" class="heading">{{ prediction_text }}</p>
+	</div>
+
+</body>
+</html>
